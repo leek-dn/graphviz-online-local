@@ -5,14 +5,7 @@ import Graph from "./Graph.js";
 import samples from "./samples.json";
 
 const STORAGE_ENTRY = "graph";
-const defaultSrc = `// https://github.com/jaime-olivares/yuml-diagram/wiki
-
-// {type:activity}
-(start)-><a>[kettle empty]->(Fill Kettle)->|b|
-<a>[kettle full]->|b|->(Boil Kettle)->|c|
-|b|->(Add Tea Bag)->(Add Milk)->|c|->(Pour Water)
-(Pour Water)->(end)
-`;
+const defaultSrc = "";
 
 let beforeUnloadMessage = null;
 
@@ -77,29 +70,29 @@ class App extends Component {
     return (
       <div id={this.props.id}>
         <header>
-          <b>yuml2svg</b> &mdash;
-          <a href="https://www.npmjs.com/package/yuml2svg">
+          <b>@aduh95/viz.js</b> &mdash;
+          <a href="https://www.npmjs.com/package/@aduh95/viz.js">
             <img
               alt="npm package"
-              src="https://img.shields.io/npm/v/yuml2svg.svg"
+              src="https://img.shields.io/npm/v/@aduh95/viz.js.svg"
             />
           </a>
-          <a href="https://www.yarnpkg.com/package/yuml2svg">
+          <a href="https://www.yarnpkg.com/package/@aduh95/viz.js">
             <img
               alt="node version"
-              src="https://img.shields.io/node/v/yuml2svg.svg"
+              src="https://img.shields.io/node/v/@aduh95/viz.js.svg"
             />
           </a>
-          <a href="https://github.com/aduh95/yuml2svg/blob/master/LICENSE.md">
+          <a href="https://github.com/aduh95/viz.js/blob/master/LICENSE.md">
             <img
               alt="license"
-              src="https://img.shields.io/github/license/aduh95/yuml2svg.svg"
+              src="https://img.shields.io/github/license/aduh95/viz.js.svg"
             />
           </a>
-          <a href="https://github.com/aduh95/yuml2svg">
+          <a href="https://github.com/aduh95/viz.js">
             <img
               alt="github package"
-              src="https://img.shields.io/github/stars/aduh95/yuml2svg.svg?style=social"
+              src="https://img.shields.io/github/stars/aduh95/viz.js.svg?style=social"
             />
           </a>
         </header>

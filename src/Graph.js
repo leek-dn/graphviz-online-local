@@ -1,5 +1,5 @@
 import { h, Component, createRef } from "preact";
-import yuml2url from "./yuml2url.js";
+import renderString2URL from "./dot2url.js";
 import ExportOptions from "./ExportOptions.js";
 
 class Graph extends Component {
@@ -21,7 +21,7 @@ class Graph extends Component {
       return;
     }
 
-    yuml2url(src, { isDark })
+    renderString2URL(src, { isDark })
       .then((url) => {
         location.hash = encodeURI(src);
         this.setState({ src: url, error: null });
