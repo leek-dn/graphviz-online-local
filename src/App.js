@@ -3,8 +3,8 @@ import Editor from "./Editor.js";
 import Options from "./Options.js";
 import Graph from "./Graph.js";
 
-const STORAGE_ENTRY = "graph";
-const defaultSrc = "";
+const STORAGE_ENTRY = "viz.js";
+const defaultSrc = "digraph { 1 -> 2 }";
 
 let beforeUnloadMessage = null;
 
