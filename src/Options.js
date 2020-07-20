@@ -1,9 +1,7 @@
 import { h, Component } from "preact";
-import samples from "./samples.json";
 
 class Options extends Component {
   handleChange = this.handleChange.bind(this);
-  loadSample = this.loadSample.bind(this);
 
   togglePreviewOnMobile(e) {
     document.documentElement.style.setProperty(
@@ -27,24 +25,9 @@ class Options extends Component {
     this.props.onOptionChange(name, value);
   }
 
-  loadSample({ target: { value, options } }) {
-    this.props.onOptionChange("sample", value);
-    options[0].selected = true;
-  }
-
   render() {
     return (
       <div className="options">
-        <select onChange={this.loadSample}>
-          <option checked value="0">
-            Load Sample
-          </option>
-          {Object.keys(samples).map(sample => (
-            <option key={sample} value={sample}>
-              {sample}
-            </option>
-          ))}
-        </select>
         <label>
           <input
             name="isDark"

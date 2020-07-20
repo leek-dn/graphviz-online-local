@@ -2,7 +2,6 @@ import { h, Component } from "preact";
 import Editor from "./Editor.js";
 import Options from "./Options.js";
 import Graph from "./Graph.js";
-import samples from "./samples.json";
 
 const STORAGE_ENTRY = "graph";
 const defaultSrc = "";
@@ -39,10 +38,6 @@ class App extends Component {
   }
 
   handleOptionChange(name, value) {
-    if (name === "sample") {
-      name = "src";
-      value = samples[value].join("\n");
-    }
     this.setState({ [name]: value });
   }
 
