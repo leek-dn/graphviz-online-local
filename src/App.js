@@ -1,5 +1,4 @@
 import { h, Component } from "preact";
-import { Fragment } from "./fragment-polyfill.js";
 import Editor from "./Editor.js";
 import Options from "./Options.js";
 import Graph from "./Graph.js";
@@ -17,7 +16,7 @@ const defaultSrc = `// https://github.com/jaime-olivares/yuml-diagram/wiki
 
 let beforeUnloadMessage = null;
 
-window.addEventListener("beforeunload", function(e) {
+window.addEventListener("beforeunload", function (e) {
   return beforeUnloadMessage;
 });
 
