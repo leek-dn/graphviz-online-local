@@ -15,11 +15,6 @@ module.exports = {
       {
         oneOf: [
           {
-            test: /\.wasm$/,
-            type: "javascript/auto",
-            use: { loader: "file-loader" },
-          },
-          {
             test: /\.js$/,
             exclude: /node_modules/,
             use: {
