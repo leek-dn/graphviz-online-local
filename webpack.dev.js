@@ -49,7 +49,4 @@ module.exports = {
   ],
   devtool: "inline-source-map",
   node: false,
-  devServer: {
-    contentBase: "./dist",
-  },
 };

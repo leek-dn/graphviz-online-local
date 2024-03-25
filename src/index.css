@@ -38,7 +38,7 @@
   #app_root {
     grid-template-areas: "header header" "editor options" "editor graph";
     grid-template-rows: auto auto minmax(0, 1fr);
-    grid-template-columns: 550px auto;
+    grid-template-columns: 50% auto;
   }
 }
 
@@ -65,12 +65,19 @@ header {
 
 .options {
   grid-area: options;
-  display: flex;
   align-items: center;
   background-color: #eee;
   border-bottom: 1px solid var(--border-color);
   padding: 8px;
-  gap: 10px;
+  gap: 5px;
+}
+
+.options label {
+	margin-right: 8px;
+  }
+
+#shareField {
+	display: none;
 }
 
 .graph {
@@ -119,7 +126,7 @@ header {
 .export-options {
   position: absolute;
   bottom: 0;
-  right: 0.5rem;
+  left: 0.5rem;
 
   display: flex;
   gap: 1rem;
@@ -138,3 +145,27 @@ header {
 .export-options a:hover {
   opacity: 1;
 }
+
+.graph #text {
+	font-size: 12px;
+	font-family: monaco, courier, monospace;
+	white-space: pre;
+	position: absolute;
+	top: 0;
+	left: 10px;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+
+#download {
+	font: bold 12px Arial;
+	text-decoration: none;
+	background-color: #EEEEEE;
+	color: #333333;
+	padding: 2px 6px 2px 6px;
+	border-top: 1px solid #CCCCCC;
+	border-right: 1px solid #333333;
+	border-bottom: 1px solid #333333;
+	border-left: 1px solid #CCCCCC;
+  }

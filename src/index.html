@@ -5,11 +5,31 @@
     <title>Viz.js playground</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Description" content="A hack to put Graphviz on the web." />
+  <script>
+
+		var giveError = function() {
+			console.warn(document.getElementsByClassName("error")[0].innerText);
+			document.getElementsByClassName("error")[0].style.display = "block";
+		}
+		var panAndZoom = {}
+		var currentFormat = ""
+		var nError = 0
+		var editor;
+		// stackoverflow
+		var isEmptyObject = function(obj) {
+			return Object.keys(obj).length === 0 && obj.constructor === Object
+		}
+
+		var focusOutShareField = function() {
+			document.getElementById('shareField').style.display = "none";
+		}
+  </script>
   </head>
 
-  <body>
+  <body><!-- onmousedown=focusOutShareField()-->
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
   </body>
+  <!--script src="svg-pan-zoom.min.js" type="text/javascript" charset="utf-8"></script-->
 </html>

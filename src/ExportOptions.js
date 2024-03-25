@@ -27,6 +27,8 @@ class IconButton extends Component {
         className={this.state.error ? "failed" : ""}
         href={this.props.href || "#"}
         download={this.props.download}
+        id={this.props.id}
+        target={this.props.target || "_self"}
       >
         <Icon icon={this.props.icon} />
       </a>
@@ -37,8 +39,7 @@ class IconButton extends Component {
 export default class ExportOptions extends Component {
   state = { downloadLink: null };
 
-  copyToClipboard = () =>
-    this.props.getText().then((data) => navigator.clipboard.writeText(data));
+  copyToClipboard = () => navigator.clipboard.writeText(document.getElementById("theSVG").outerHTML);
 
   render() {
     return (
@@ -58,8 +59,9 @@ export default class ExportOptions extends Component {
         <IconButton
           icon={faDownload}
           title="Save to a file"
-          href={this.props.href}
+		  id="downloadTheDiagram"
           download={this.props.fileName}
+          target="_blank"
         />
       </div>
     );

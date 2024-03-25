@@ -18,7 +18,9 @@ class App extends Component {
       this.getHashDiagram() ||
       localStorage.getItem(STORAGE_ENTRY) ||
       defaultSrc,
-    isDark: matchMedia("(prefers-color-scheme: dark)").matches,
+	  isDark: true,
+	  isRawOutput: false,
+	  engine: "dot",
   };
 
   handleOptionChange = this.handleOptionChange.bind(this);
@@ -64,33 +66,7 @@ class App extends Component {
   render() {
     return (
       <div id={this.props.id}>
-        <header>
-          <b>@aduh95/viz.js</b> &mdash;
-          <a href="https://www.npmjs.com/package/@aduh95/viz.js">
-            <img
-              alt="npm package"
-              src="https://img.shields.io/npm/v/@aduh95/viz.js.svg"
-            />
-          </a>
-          <a href="https://www.yarnpkg.com/package/@aduh95/viz.js">
-            <img
-              alt="node version"
-              src="https://img.shields.io/node/v/@aduh95/viz.js.svg"
-            />
-          </a>
-          <a href="https://github.com/aduh95/viz.js/blob/master/LICENSE.md">
-            <img
-              alt="license"
-              src="https://img.shields.io/github/license/aduh95/viz.js.svg"
-            />
-          </a>
-          <a href="https://github.com/aduh95/viz.js">
-            <img
-              alt="github package"
-              src="https://img.shields.io/github/stars/aduh95/viz.js.svg?style=social"
-            />
-          </a>
-        </header>
+
 
         <Editor
           value={this.state.src}
@@ -100,9 +76,12 @@ class App extends Component {
 
         <Options
           isDark={this.state.isDark}
+          engine={this.state.engine}
+          format={this.state.format}
+          isRawOutput={this.state.isRawOutput}
           onOptionChange={this.handleOptionChange}
         />
-        <Graph src={this.state.src} isDark={this.state.isDark} />
+        <Graph src={this.state.src} isDark={this.state.isDark} isRawOutput={this.state.isRawOutput} engine={this.state.engine} format={this.state.format} />
       </div>
     );
   }

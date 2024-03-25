@@ -22,9 +22,13 @@ class Editor extends Component {
 
           this.editor = ace.default.edit(this.elementRef.current);
           this.editor.on("change", this.aceChanged.bind(this));
-
+		  editor = this.editor
           const session = this.editor.getSession();
           session.setMode("ace/mode/dot");
+
+			this.editor.setOptions({
+				enableBasicAutocompletion: true
+			});
           session.setUseWrapMode(true);
           session.getDocument().setValue(this.props.value || "");
         })
@@ -51,19 +55,14 @@ class Editor extends Component {
   }
 
   render() {
+	console.log(this.editor)
     if (this.editor) {
       this.editor.setTheme(
-        `ace/theme/${this.props.isDark ? "dracula" : "github"}`
+        `ace/theme/${this.props.isDark ? "twilight" : "github"}`
       );
     }
     return (
       <main className="editor" ref={this.elementRef}>
-        <ExportOptions
-          fileName="diagram.yuml"
-          getText={this.getText}
-          href={`data:text/yuml,${encodeURIComponent(this.props.value)}`}
-          requestFullscreen={this.requestFullScreen}
-        />
       </main>
     );
   }
