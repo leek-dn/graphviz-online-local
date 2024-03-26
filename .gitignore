@@ -4,3 +4,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+package.json
+src/render.browser.js
+src/render.wasm
+package-lock.json
+yarn.lock
