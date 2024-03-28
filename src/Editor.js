@@ -27,7 +27,8 @@ class Editor extends Component {
           session.setMode("ace/mode/dot");
 
 			this.editor.setOptions({
-				enableBasicAutocompletion: true
+				enableBasicAutocompletion: true,
+                enableLiveAutocompletion: true
 			});
           session.setUseWrapMode(true);
           session.getDocument().setValue(this.props.value || "");
@@ -55,7 +56,6 @@ class Editor extends Component {
   }
 
   render() {
-	console.log(this.editor)
     if (this.editor) {
       this.editor.setTheme(
         `ace/theme/${this.props.isDark ? "twilight" : "github"}`

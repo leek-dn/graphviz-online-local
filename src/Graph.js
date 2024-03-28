@@ -25,7 +25,7 @@ class Graph extends Component {
     renderString2URL(src, { isDark, isRawOutput, engine: engine, format})
       .then((url) => {
         location.hash = encodeURI(src);
-		console.log(url)
+		// console.log(url)
 		nError = 0;
         this.setState({ src: url, error: null });
       })
@@ -33,8 +33,8 @@ class Graph extends Component {
 		
 		document.getElementsByClassName("error")[0].style.display = "none";
 		console.log(error);
-		error.message = error.toString()
-		var s = document.createElement("script")
+		error.message = error.toString();
+		var s = document.createElement("script");
 		nError++;
 		s.innerHTML = "setTimeout(function(){if (nError==" + nError +")giveError()}, 1000);"
 		document.body.appendChild(s)

@@ -11,7 +11,6 @@ export default (dot, options) => {
   return viz.renderString(dot, options).then((svg) => {
 	var format = document.getElementsByName("format")[0].value;
 	var rawOutput = document.getElementsByName("isRawOutput")[0].checked;
-	console.log("."+rawOutput+".")
 	if ((format=="svg"||format=="")&&!rawOutput) {
 		document.getElementsByClassName("element")[0].innerHTML = svg;
 		var theSVG = document.getElementsByClassName("element")[0].children[0]
@@ -32,7 +31,7 @@ export default (dot, options) => {
 			if (typeof panAndZoom.zoom!="undefined")spz.zoom(panAndZoom.zoom);
 			if (typeof panAndZoom.pan!="undefined")spz.pan(panAndZoom.pan);
 		}
-		console.log(spz)
+		// console.log(spz);
 	} else {
 		var text = document.createElement("div");
 		text.id = "text";
