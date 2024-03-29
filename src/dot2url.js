@@ -1,5 +1,4 @@
 import Viz from "@aduh95/viz.js";
-import { text } from "@fortawesome/fontawesome-svg-core";
 import VizWorker from "worker-loader!./get-viz.js-worker.js";
 import svgPanZoom from "./svg-pan-zoom.min.js";
 
@@ -17,7 +16,6 @@ export default (dot, options) => {
 		theSVG.id = "theSVG"
 		theSVG.style.width = "100%"
 		theSVG.style.height = "inherit"
-		document.getElementById("downloadTheDiagram").href = "data:image/svg+xml;charset=utf8," + encodeURIComponent(theSVG.outerHTML)
 		document.getElementById("download").href = "data:image/svg+xml;charset=utf8," + encodeURIComponent(theSVG.outerHTML)
 		var spz = svgPanZoom("#theSVG", {
 			zoomEnabled: true,
@@ -39,7 +37,6 @@ export default (dot, options) => {
 		document.getElementsByClassName("element")[0].innerHTML = text.outerHTML;
 		// TODO
 		var mime = ""
-		document.getElementById("downloadTheDiagram").href = "data:image/svg+xml;charset=utf8," + encodeURIComponent(text.outerHTML)
 	}
 	  //return theSVG;
     /*const file = new File([svg], "diagram.svg", {

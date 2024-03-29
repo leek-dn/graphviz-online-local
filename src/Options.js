@@ -1,4 +1,3 @@
-import { faCopy } from "@fortawesome/free-solid-svg-icons";
 import { h, Component } from "preact";
 
 class Options extends Component {
